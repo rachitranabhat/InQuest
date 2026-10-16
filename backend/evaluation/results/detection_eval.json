@@ -1,0 +1,581 @@
+{
+  "evaluated_at_utc": "2026-10-16T00:22:03Z",
+  "unit": "synthetic player",
+  "detector": "rule-based monitoring (detection/monitoring.py)",
+  "development": {
+    "population": {
+      "n": 400,
+      "positives": 38,
+      "precision": 0.446,
+      "recall": 0.868,
+      "f1": 0.589,
+      "false_positive_rate": 0.113,
+      "confusion_matrix": {
+        "tp": 33,
+        "fp": 41,
+        "fn": 5,
+        "tn": 321
+      },
+      "matrix_layout": "rows = planted label (suspicious, not suspicious); columns = alerted, not alerted"
+    },
+    "by_category": [
+      {
+        "category": "explainable_high_volume",
+        "players": 38,
+        "alerted": 19,
+        "alert_rate": 0.5
+      },
+      {
+        "category": "explainable_spike",
+        "players": 34,
+        "alerted": 13,
+        "alert_rate": 0.382
+      },
+      {
+        "category": "normal",
+        "players": 290,
+        "alerted": 9,
+        "alert_rate": 0.031
+      },
+      {
+        "category": "suspicious_behaviour_shift",
+        "players": 3,
+        "alerted": 3,
+        "alert_rate": 1.0
+      },
+      {
+        "category": "suspicious_combined",
+        "players": 7,
+        "alerted": 7,
+        "alert_rate": 1.0
+      },
+      {
+        "category": "suspicious_frequency",
+        "players": 4,
+        "alerted": 4,
+        "alert_rate": 1.0
+      },
+      {
+        "category": "suspicious_location",
+        "players": 12,
+        "alerted": 9,
+        "alert_rate": 0.75
+      },
+      {
+        "category": "suspicious_spending",
+        "players": 4,
+        "alerted": 4,
+        "alert_rate": 1.0
+      },
+      {
+        "category": "suspicious_spending_pattern",
+        "players": 2,
+        "alerted": 2,
+        "alert_rate": 1.0
+      },
+      {
+        "category": "suspicious_time",
+        "players": 6,
+        "alerted": 4,
+        "alert_rate": 0.667
+      }
+    ],
+    "curated_subjects": [
+      {
+        "curated_key": "lottery_burst",
+        "category": "suspicious_frequency",
+        "planted": 1,
+        "alerted": 1
+      },
+      {
+        "curated_key": "multi_retailer",
+        "category": "ambiguous",
+        "planted": 0,
+        "alerted": 1
+      },
+      {
+        "curated_key": "deposit_anomaly",
+        "category": "aml_like_passthrough",
+        "planted": 1,
+        "alerted": 1
+      },
+      {
+        "curated_key": "incomplete_attribution",
+        "category": "incomplete_data",
+        "planted": 0,
+        "alerted": 1
+      },
+      {
+        "curated_key": "high_volume_legit",
+        "category": "explainable_high_volume",
+        "planted": 0,
+        "alerted": 1
+      },
+      {
+        "curated_key": "jackpot_week",
+        "category": "explainable_context_event",
+        "planted": 0,
+        "alerted": 1
+      },
+      {
+        "curated_key": "shared_retailer",
+        "category": "ambiguous_shared_location",
+        "planted": 0,
+        "alerted": 1
+      },
+      {
+        "curated_key": "prize_claims",
+        "category": "suspicious_spending_pattern",
+        "planted": 1,
+        "alerted": 1
+      },
+      {
+        "curated_key": "shared_partner",
+        "category": "ambiguous_shared_location",
+        "planted": 0,
+        "alerted": 1
+      }
+    ],
+    "seed": 42,
+    "n_players": 400,
+    "alerts": 83
+  },
+  "heldout": [
+    {
+      "population": {
+        "n": 400,
+        "positives": 50,
+        "precision": 0.527,
+        "recall": 0.98,
+        "f1": 0.685,
+        "false_positive_rate": 0.126,
+        "confusion_matrix": {
+          "tp": 49,
+          "fp": 44,
+          "fn": 1,
+          "tn": 306
+        },
+        "matrix_layout": "rows = planted label (suspicious, not suspicious); columns = alerted, not alerted"
+      },
+      "by_category": [
+        {
+          "category": "explainable_high_volume",
+          "players": 34,
+          "alerted": 25,
+          "alert_rate": 0.735
+        },
+        {
+          "category": "explainable_spike",
+          "players": 35,
+          "alerted": 14,
+          "alert_rate": 0.4
+        },
+        {
+          "category": "normal",
+          "players": 281,
+          "alerted": 5,
+          "alert_rate": 0.018
+        },
+        {
+          "category": "suspicious_behaviour_shift",
+          "players": 4,
+          "alerted": 4,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_combined",
+          "players": 7,
+          "alerted": 7,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_frequency",
+          "players": 10,
+          "alerted": 10,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_location",
+          "players": 6,
+          "alerted": 6,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_spending",
+          "players": 6,
+          "alerted": 6,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_spending_pattern",
+          "players": 14,
+          "alerted": 14,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_time",
+          "players": 3,
+          "alerted": 2,
+          "alert_rate": 0.667
+        }
+      ],
+      "curated_subjects": [
+        {
+          "curated_key": "lottery_burst",
+          "category": "suspicious_frequency",
+          "planted": 1,
+          "alerted": 1
+        },
+        {
+          "curated_key": "multi_retailer",
+          "category": "ambiguous",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "deposit_anomaly",
+          "category": "aml_like_passthrough",
+          "planted": 1,
+          "alerted": 1
+        },
+        {
+          "curated_key": "incomplete_attribution",
+          "category": "incomplete_data",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "high_volume_legit",
+          "category": "explainable_high_volume",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "jackpot_week",
+          "category": "explainable_context_event",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "shared_retailer",
+          "category": "ambiguous_shared_location",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "prize_claims",
+          "category": "suspicious_spending_pattern",
+          "planted": 1,
+          "alerted": 1
+        },
+        {
+          "curated_key": "shared_partner",
+          "category": "ambiguous_shared_location",
+          "planted": 0,
+          "alerted": 1
+        }
+      ],
+      "seed": 1001,
+      "n_players": 400,
+      "alerts": 102
+    },
+    {
+      "population": {
+        "n": 400,
+        "positives": 40,
+        "precision": 0.465,
+        "recall": 1.0,
+        "f1": 0.635,
+        "false_positive_rate": 0.128,
+        "confusion_matrix": {
+          "tp": 40,
+          "fp": 46,
+          "fn": 0,
+          "tn": 314
+        },
+        "matrix_layout": "rows = planted label (suspicious, not suspicious); columns = alerted, not alerted"
+      },
+      "by_category": [
+        {
+          "category": "explainable_high_volume",
+          "players": 35,
+          "alerted": 28,
+          "alert_rate": 0.8
+        },
+        {
+          "category": "explainable_spike",
+          "players": 28,
+          "alerted": 14,
+          "alert_rate": 0.5
+        },
+        {
+          "category": "normal",
+          "players": 297,
+          "alerted": 4,
+          "alert_rate": 0.013
+        },
+        {
+          "category": "suspicious_behaviour_shift",
+          "players": 7,
+          "alerted": 7,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_combined",
+          "players": 6,
+          "alerted": 6,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_frequency",
+          "players": 8,
+          "alerted": 8,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_location",
+          "players": 6,
+          "alerted": 6,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_spending",
+          "players": 1,
+          "alerted": 1,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_spending_pattern",
+          "players": 7,
+          "alerted": 7,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_time",
+          "players": 5,
+          "alerted": 5,
+          "alert_rate": 1.0
+        }
+      ],
+      "curated_subjects": [
+        {
+          "curated_key": "lottery_burst",
+          "category": "suspicious_frequency",
+          "planted": 1,
+          "alerted": 1
+        },
+        {
+          "curated_key": "multi_retailer",
+          "category": "ambiguous",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "deposit_anomaly",
+          "category": "aml_like_passthrough",
+          "planted": 1,
+          "alerted": 1
+        },
+        {
+          "curated_key": "incomplete_attribution",
+          "category": "incomplete_data",
+          "planted": 0,
+          "alerted": 0
+        },
+        {
+          "curated_key": "high_volume_legit",
+          "category": "explainable_high_volume",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "jackpot_week",
+          "category": "explainable_context_event",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "shared_retailer",
+          "category": "ambiguous_shared_location",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "prize_claims",
+          "category": "suspicious_spending_pattern",
+          "planted": 1,
+          "alerted": 1
+        },
+        {
+          "curated_key": "shared_partner",
+          "category": "ambiguous_shared_location",
+          "planted": 0,
+          "alerted": 1
+        }
+      ],
+      "seed": 2002,
+      "n_players": 400,
+      "alerts": 94
+    },
+    {
+      "population": {
+        "n": 400,
+        "positives": 46,
+        "precision": 0.535,
+        "recall": 1.0,
+        "f1": 0.697,
+        "false_positive_rate": 0.113,
+        "confusion_matrix": {
+          "tp": 46,
+          "fp": 40,
+          "fn": 0,
+          "tn": 314
+        },
+        "matrix_layout": "rows = planted label (suspicious, not suspicious); columns = alerted, not alerted"
+      },
+      "by_category": [
+        {
+          "category": "explainable_high_volume",
+          "players": 30,
+          "alerted": 19,
+          "alert_rate": 0.633
+        },
+        {
+          "category": "explainable_spike",
+          "players": 30,
+          "alerted": 16,
+          "alert_rate": 0.533
+        },
+        {
+          "category": "normal",
+          "players": 294,
+          "alerted": 5,
+          "alert_rate": 0.017
+        },
+        {
+          "category": "suspicious_behaviour_shift",
+          "players": 6,
+          "alerted": 6,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_combined",
+          "players": 5,
+          "alerted": 5,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_frequency",
+          "players": 6,
+          "alerted": 6,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_location",
+          "players": 9,
+          "alerted": 9,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_spending",
+          "players": 6,
+          "alerted": 6,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_spending_pattern",
+          "players": 11,
+          "alerted": 11,
+          "alert_rate": 1.0
+        },
+        {
+          "category": "suspicious_time",
+          "players": 3,
+          "alerted": 3,
+          "alert_rate": 1.0
+        }
+      ],
+      "curated_subjects": [
+        {
+          "curated_key": "lottery_burst",
+          "category": "suspicious_frequency",
+          "planted": 1,
+          "alerted": 1
+        },
+        {
+          "curated_key": "multi_retailer",
+          "category": "ambiguous",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "deposit_anomaly",
+          "category": "aml_like_passthrough",
+          "planted": 1,
+          "alerted": 1
+        },
+        {
+          "curated_key": "incomplete_attribution",
+          "category": "incomplete_data",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "high_volume_legit",
+          "category": "explainable_high_volume",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "jackpot_week",
+          "category": "explainable_context_event",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "shared_retailer",
+          "category": "ambiguous_shared_location",
+          "planted": 0,
+          "alerted": 1
+        },
+        {
+          "curated_key": "prize_claims",
+          "category": "suspicious_spending_pattern",
+          "planted": 1,
+          "alerted": 1
+        },
+        {
+          "curated_key": "shared_partner",
+          "category": "ambiguous_shared_location",
+          "planted": 0,
+          "alerted": 1
+        }
+      ],
+      "seed": 3003,
+      "n_players": 400,
+      "alerts": 95
+    }
+  ],
+  "heldout_pooled": {
+    "n": 1200,
+    "positives": 136,
+    "precision": 0.509,
+    "recall": 0.993,
+    "f1": 0.673,
+    "false_positive_rate": 0.122,
+    "confusion_matrix": {
+      "tp": 135,
+      "fp": 130,
+      "fn": 1,
+      "tn": 934
+    },
+    "matrix_layout": "rows = planted label (suspicious, not suspicious); columns = alerted, not alerted"
+  },
+  "heldout_seeds": [
+    1001,
+    2002,
+    3003
+  ],
+  "caveat": "Synthetic data only. The simulator and the monitoring rules were designed together, so these figures are optimistic and are not evidence of real-world or production performance.",
+  "method": "Held-out worlds are generated with seeds never used while writing the rules; labels are joined only after monitoring has run; curated demo subjects are reported separately."
+}

@@ -1,0 +1,27 @@
+# Render Blueprint for the INQUEST API (FastAPI). Secrets are set in the Render dashboard (sync: false), never here.
+services:
+  - type: web
+    name: inquest-api
+    runtime: python
+    rootDir: .
+    buildCommand: pip install -r requirements-v2.txt
+    startCommand: uvicorn api.main:app --app-dir backend --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /api/health
+    autoDeploy: false
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: PRISM_DB_BACKEND
+        value: postgres
+      - key: DATABASE_URL
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: PRISM_CORS_ORIGINS
+        sync: false
+      - key: PRISM_DEMO_ACCESS_CODE
+        sync: false
+      - key: PRISM_LLM_DAILY_LIMIT
+        value: "40"

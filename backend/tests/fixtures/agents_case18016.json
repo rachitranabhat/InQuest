@@ -1,0 +1,538 @@
+{
+ "note": "Synthetic. Verified findings and case evidence from live run INV-2f790604b4 (CASE-18016, gpt-4o-mini).",
+ "findings": [
+  {
+   "finding_id": "F-01",
+   "agent": "suspicion",
+   "kind": "observation",
+   "weight": "strong",
+   "text": "An alert for repeated prize claims was raised on 2026-10-14 with a high alert score of 76.7, indicating a significant deviation from expected behavior.",
+   "evidence_ids": [
+    "EV-001219"
+   ]
+  },
+  {
+   "finding_id": "F-02",
+   "agent": "suspicion",
+   "kind": "observation",
+   "weight": "strong",
+   "text": "During the review window from 2026-10-08 to 2026-10-14, there were 37 attributed purchases totaling $3,333.66, averaging $90.10 per transaction, which is significantly higher than the baseline average of $12.44.",
+   "evidence_ids": [
+    "EV-001226",
+    "EV-001230"
+   ]
+  },
+  {
+   "finding_id": "F-03",
+   "agent": "suspicion",
+   "kind": "observation",
+   "weight": "strong",
+   "text": "The busiest hour recorded 12 transactions totaling $3,000.00, which is 8.45 times higher than the baseline busiest hour average of 1.42 transactions.",
+   "evidence_ids": [
+    "EV-001258",
+    "EV-001229"
+   ]
+  },
+  {
+   "finding_id": "F-04",
+   "agent": "suspicion",
+   "kind": "observation",
+   "weight": "strong",
+   "text": "The subject's spending during the review window was $3,333.66, compared to a typical weekly total of $185.46, indicating a 17.98 times increase in spending.",
+   "evidence_ids": [
+    "EV-001231"
+   ]
+  },
+  {
+   "finding_id": "F-05",
+   "agent": "suspicion",
+   "kind": "observation",
+   "weight": "strong",
+   "text": "There were 12 identical transaction amounts of $250.00, which may reflect a pattern of repeated purchases.",
+   "evidence_ids": [
+    "EV-001225"
+   ]
+  },
+  {
+   "finding_id": "F-06",
+   "agent": "suspicion",
+   "kind": "observation",
+   "weight": "weak",
+   "text": "The subject made purchases in 2 unique cities and 7 unique retailers, consistent with their baseline activity, but included 1 new retailer not seen in the baseline.",
+   "evidence_ids": [
+    "EV-001233",
+    "EV-001234",
+    "EV-001245"
+   ]
+  },
+  {
+   "finding_id": "F-08",
+   "agent": "suspicion",
+   "kind": "interpretation",
+   "weight": "weak",
+   "text": "The timing of the transactions shows no night activity, which aligns with the baseline, indicating that the subject's purchasing behavior did not change in that regard.",
+   "evidence_ids": [
+    "EV-001223"
+   ]
+  },
+  {
+   "finding_id": "F-09",
+   "agent": "suspicion",
+   "kind": "missing_information",
+   "weight": "weak",
+   "text": "The records do not provide information on the nature of the purchases or whether they were for legitimate goods or services, limiting the ability to fully assess the context of the spending.",
+   "evidence_ids": [
+    "EV-001259"
+   ]
+  },
+  {
+   "finding_id": "F-10",
+   "agent": "alternative",
+   "kind": "observation",
+   "weight": "strong",
+   "text": "The subject made 37 attributed purchases totaling $3,333.66 between 2026-10-08 and 2026-10-14, averaging $90.10 per transaction, with a maximum transaction amount of $250.00.",
+   "evidence_ids": [
+    "EV-001226",
+    "EV-007070"
+   ]
+  },
+  {
+   "finding_id": "F-11",
+   "agent": "alternative",
+   "kind": "observation",
+   "weight": "strong",
+   "text": "There were 12 transactions in the busiest hour (2026-10-12 15:01 to 15:19), totaling $3,000.00, which is significantly higher than the baseline of 1.42 transactions per hour.",
+   "evidence_ids": [
+    "EV-001258",
+    "EV-001220"
+   ]
+  },
+  {
+   "finding_id": "F-13",
+   "agent": "alternative",
+   "kind": "counterevidence",
+   "weight": "strong",
+   "text": "The transactions occurred during a jackpot draw week (2026-10-10 to 2026-10-11), which typically sees increased lottery sales, with the subject accounting for 24.3% of the network's transactions during this period.",
+   "evidence_ids": [
+    "EV-001262"
+   ]
+  },
+  {
+   "finding_id": "F-14",
+   "agent": "alternative",
+   "kind": "missing_information",
+   "weight": "strong",
+   "text": "The records do not provide information on the subject's historical behavior prior to the review window, limiting the ability to assess whether the current activity is unusual compared to past behavior.",
+   "evidence_ids": [
+    "EV-001227"
+   ]
+  },
+  {
+   "finding_id": "F-15",
+   "agent": "alternative",
+   "kind": "observation",
+   "weight": "strong",
+   "text": "The subject's transactions occurred at familiar retailers, including Lakeside Corner Store #114 and Lakeside Grocer, which were also used in the baseline period.",
+   "evidence_ids": [
+    "EV-001235",
+    "EV-001237"
+   ]
+  }
+ ],
+ "items": [
+  {
+   "evidence_id": "EV-001219",
+   "case_id": "CASE-18016",
+   "snapshot_id": "SNP-000016",
+   "type": "alert",
+   "title": "Alert AL-18016 \u00b7 Repeated prize claims",
+   "summary": "Simulated monitoring feed (PRISM prototype rules) raised a repeated prize claims alert at 2026-10-14 17:44 with a prototype alert score of 76.7 / 100 (not a fraud probability).",
+   "source_ids": [
+    "TXN-0012979",
+    "TXN-0012995",
+    "TXN-0013003",
+    "TXN-0013004",
+    "TXN-0013005",
+    "TXN-0013006",
+    "TXN-0013007",
+    "TXN-0013008",
+    "TXN-0013009",
+    "TXN-0013010",
+    "TXN-0013011",
+    "TXN-0013012",
+    "TXN-0013013",
+    "TXN-0013014"
+   ],
+   "entities": [
+    "AL-18016",
+    "CASE-18016",
+    "PLY-00230"
+   ],
+   "computed": {
+    "alert_score": 76.7,
+    "alert_type": "Repeated prize claims",
+    "baseline_days": 23,
+    "date": "2026-10-14",
+    "indicators_fired": 5,
+    "rules_fired": [
+     "Behavioural deviation rule (prototype score \u2265 20)"
+    ],
+    "score_band": "High",
+    "triggered_at_local": "2026-10-14 17:44",
+    "window_days": 7,
+    "window_end": "2026-10-14",
+    "window_start": "2026-10-08"
+   },
+   "provenance": {
+    "key": "alert",
+    "rules": [
+     "Behavioural deviation rule (prototype score \u2265 20)"
+    ],
+    "source": "Simulated monitoring feed (PRISM prototype rules)"
+   },
+   "created_at_utc": "2026-10-16T03:15:26Z"
+  },
+  {
+   "evidence_id": "EV-001227",
+   "case_id": "CASE-18016",
+   "snapshot_id": "SNP-000016",
+   "type": "baseline",
+   "title": "Historical baseline (23 days before the window)",
+   "summary": "49 attributed purchases in the baseline period, 2.13/day, average $12.44.",
+   "source_ids": [],
+   "entities": [
+    "London",
+    "Ottawa",
+    "PLY-00230"
+   ],
+   "computed": {
+    "average_amount": 12.44,
+    "baseline_days": 23,
+    "baseline_transaction_count": 49,
+    "busiest_hour_average": 1.42,
+    "night_share_pct": 0.0,
+    "p95_amount": 24.33,
+    "sufficient": true,
+    "transactions_per_day": 2.13,
+    "typical_week_total": 185.46,
+    "usual_cities": [
+     "London",
+     "Ottawa"
+    ]
+   },
+   "provenance": {
+    "key": "baseline",
+    "note": "Aggregated from the subject's own earlier records; individual baseline records are not listed.",
+    "period": "23 days before the review window"
+   },
+   "created_at_utc": "2026-10-16T03:15:26Z"
+  },
+  {
+   "evidence_id": "EV-001231",
+   "case_id": "CASE-18016",
+   "snapshot_id": "SNP-000016",
+   "type": "comparison",
+   "title": "Total for a week ($): baseline vs. review window",
+   "summary": "Total for a week ($): 185.46 in a typical period vs. 3333.66 in the review window (17.98\u00d7)",
+   "source_ids": [
+    "TXN-0012978",
+    "TXN-0012979",
+    "TXN-0012980",
+    "TXN-0012981",
+    "TXN-0012982",
+    "TXN-0012983",
+    "TXN-0012984",
+    "TXN-0012985",
+    "TXN-0012986",
+    "TXN-0012987",
+    "TXN-0012988",
+    "TXN-0012989",
+    "TXN-0012990",
+    "TXN-0012991",
+    "TXN-0012992",
+    "TXN-0012993",
+    "TXN-0012994",
+    "TXN-0012995",
+    "TXN-0012996",
+    "TXN-0012997",
+    "TXN-0012998",
+    "TXN-0012999",
+    "TXN-0013000",
+    "TXN-0013001",
+    "TXN-0013002",
+    "TXN-0013003",
+    "TXN-0013004",
+    "TXN-0013005",
+    "TXN-0013006",
+    "TXN-0013007",
+    "TXN-0013008",
+    "TXN-0013009",
+    "TXN-0013010",
+    "TXN-0013011",
+    "TXN-0013012",
+    "TXN-0013013",
+    "TXN-0013014"
+   ],
+   "entities": [
+    "PLY-00230"
+   ],
+   "computed": {
+    "baseline": 185.46,
+    "change_pct": 1697.5,
+    "current": 3333.66,
+    "metric": "Total for a week ($)",
+    "ratio": 17.98
+   },
+   "provenance": {
+    "baseline_period_days": 23,
+    "key": "cmp:week_total",
+    "window_days": 7
+   },
+   "created_at_utc": "2026-10-16T03:15:26Z"
+  },
+  {
+   "evidence_id": "EV-001262",
+   "case_id": "CASE-18016",
+   "snapshot_id": "SNP-000016",
+   "type": "context_event",
+   "title": "Jackpot draw week (fictional), 2026-10-10 to 2026-10-11",
+   "summary": "Large advertised jackpot; network-wide lottery sales rise on these days. Network-wide terminal sales averaged 2869.5/day on those days vs. 1429.2/day in the baseline (2.01\u00d7). 9 of this subject's window transactions fall on those days.",
+   "source_ids": [
+    "TXN-0012982",
+    "TXN-0012983",
+    "TXN-0012984",
+    "TXN-0012985",
+    "TXN-0012986",
+    "TXN-0012987",
+    "TXN-0012988",
+    "TXN-0012989",
+    "TXN-0012990"
+   ],
+   "entities": [
+    "EVT-JACKPOT-01",
+    "Jackpot draw week (fictional)"
+   ],
+   "computed": {
+    "end": "2026-10-11",
+    "event_name": "Jackpot draw week (fictional)",
+    "network_daily_baseline": 1429.2,
+    "network_daily_during_event": 2869.5,
+    "network_ratio": 2.01,
+    "start": "2026-10-10",
+    "subject_share_pct": 24.3,
+    "subject_transactions_during_event": 9
+   },
+   "provenance": {
+    "key": "event:EVT-JACKPOT-01",
+    "table": "events + transactions (network-wide daily counts)"
+   },
+   "created_at_utc": "2026-10-16T03:15:26Z"
+  },
+  {
+   "evidence_id": "EV-001226",
+   "case_id": "CASE-18016",
+   "snapshot_id": "SNP-000016",
+   "type": "metric",
+   "title": "Review-window totals (attributed purchases)",
+   "summary": "37 attributed purchases totalling $3,333.66 between 2026-10-08 15:14 and 2026-10-14 17:29.",
+   "source_ids": [
+    "TXN-0012978",
+    "TXN-0012979",
+    "TXN-0012980",
+    "TXN-0012981",
+    "TXN-0012982",
+    "TXN-0012983",
+    "TXN-0012984",
+    "TXN-0012985",
+    "TXN-0012986",
+    "TXN-0012987",
+    "TXN-0012988",
+    "TXN-0012989",
+    "TXN-0012990",
+    "TXN-0012991",
+    "TXN-0012992",
+    "TXN-0012993",
+    "TXN-0012994",
+    "TXN-0012995",
+    "TXN-0012996",
+    "TXN-0012997",
+    "TXN-0012998",
+    "TXN-0012999",
+    "TXN-0013000",
+    "TXN-0013001",
+    "TXN-0013002",
+    "TXN-0013003",
+    "TXN-0013004",
+    "TXN-0013005",
+    "TXN-0013006",
+    "TXN-0013007",
+    "TXN-0013008",
+    "TXN-0013009",
+    "TXN-0013010",
+    "TXN-0013011",
+    "TXN-0013012",
+    "TXN-0013013",
+    "TXN-0013014"
+   ],
+   "entities": [
+    "PLY-00230"
+   ],
+   "computed": {
+    "average_amount": 90.1,
+    "days_active": 7,
+    "first_local": "2026-10-08 15:14",
+    "last_local": "2026-10-14 17:29",
+    "max_amount": 250.0,
+    "night_transactions": 0,
+    "total_amount": 3333.66,
+    "transaction_count": 37,
+    "unique_cities": 2,
+    "unique_retailers": 7,
+    "window_days": 7
+   },
+   "provenance": {
+    "key": "metric:window",
+    "period": "7-day review window",
+    "scope": "attributed purchases"
+   },
+   "created_at_utc": "2026-10-16T03:15:26Z"
+  },
+  {
+   "evidence_id": "EV-001220",
+   "case_id": "CASE-18016",
+   "snapshot_id": "SNP-000016",
+   "type": "risk_factor",
+   "title": "Frequency anomaly \u00b7 25.0 / 25 pts",
+   "summary": "12 txns in busiest hour vs. 1.42 baseline; 5.29/day vs. 2.13/day. Rule: max of: daily rate vs. baseline (1.5x\u21925x) and busiest 60-min window vs. baseline busiest hour (1.5x\u21926x).",
+   "source_ids": [
+    "TXN-0013003",
+    "TXN-0013004",
+    "TXN-0013005",
+    "TXN-0013006",
+    "TXN-0013007",
+    "TXN-0013008",
+    "TXN-0013009",
+    "TXN-0013010",
+    "TXN-0013011",
+    "TXN-0013012",
+    "TXN-0013013",
+    "TXN-0013014"
+   ],
+   "entities": [
+    "PLY-00230"
+   ],
+   "computed": {
+    "baseline_busiest_hour": 1.42,
+    "baseline_per_day": 2.13,
+    "frequency_ratio": 2.48,
+    "max_points": 25,
+    "peak_hour_ratio": 8.45,
+    "peak_hour_transactions": 12,
+    "points": 25.0,
+    "share_pct": 100.0,
+    "transactions_per_day": 5.29,
+    "triggered": true
+   },
+   "provenance": {
+    "engine": "detection/risk_scoring.py",
+    "key": "factor:frequency",
+    "rule": "max of: daily rate vs. baseline (1.5x\u21925x) and busiest 60-min window vs. baseline busiest hour (1.5x\u21926x)"
+   },
+   "created_at_utc": "2026-10-16T03:15:26Z"
+  },
+  {
+   "evidence_id": "EV-001225",
+   "case_id": "CASE-18016",
+   "snapshot_id": "SNP-000016",
+   "type": "risk_factor",
+   "title": "Repeated-pattern anomaly \u00b7 10.0 / 10 pts",
+   "summary": "8 rapid pairs; 12 identical amounts. Rule: max of: back-to-back transactions within 2 min (2\u219210 pairs) and identical amounts \u2265$20 (3\u21928 repeats).",
+   "source_ids": [
+    "TXN-0013003",
+    "TXN-0013004",
+    "TXN-0013005",
+    "TXN-0013006",
+    "TXN-0013007",
+    "TXN-0013008",
+    "TXN-0013009",
+    "TXN-0013010",
+    "TXN-0013011",
+    "TXN-0013012",
+    "TXN-0013013",
+    "TXN-0013014"
+   ],
+   "entities": [
+    "PLY-00230"
+   ],
+   "computed": {
+    "max_points": 10,
+    "points": 10.0,
+    "rapid_pairs": 8,
+    "repeated_amount": 250.0,
+    "repeated_amount_count": 12,
+    "share_pct": 100.0,
+    "triggered": true
+   },
+   "provenance": {
+    "engine": "detection/risk_scoring.py",
+    "key": "factor:pattern",
+    "rule": "max of: back-to-back transactions within 2 min (2\u219210 pairs) and identical amounts \u2265$20 (3\u21928 repeats)"
+   },
+   "created_at_utc": "2026-10-16T03:15:26Z"
+  },
+  {
+   "evidence_id": "EV-001258",
+   "case_id": "CASE-18016",
+   "snapshot_id": "SNP-000016",
+   "type": "sequence",
+   "title": "Busiest 60 minutes: 12 transactions",
+   "summary": "12 attributed purchases between 2026-10-12 15:01 and 15:19 ($3,000.00).",
+   "source_ids": [
+    "TXN-0013003",
+    "TXN-0013004",
+    "TXN-0013005",
+    "TXN-0013006",
+    "TXN-0013007",
+    "TXN-0013008",
+    "TXN-0013009",
+    "TXN-0013010",
+    "TXN-0013011",
+    "TXN-0013012",
+    "TXN-0013013",
+    "TXN-0013014"
+   ],
+   "entities": [
+    "Cedar Gas & Go",
+    "Lakeside Corner Store #114",
+    "Lakeside Grocer",
+    "London",
+    "Maple Convenience",
+    "Northern Market",
+    "PLY-00230",
+    "RTL-0017",
+    "RTL-0063",
+    "RTL-0066",
+    "RTL-0067",
+    "RTL-0079",
+    "RTL-0114",
+    "Riverside Corner Store"
+   ],
+   "computed": {
+    "date": "2026-10-12",
+    "end_local": "2026-10-12 15:19",
+    "end_time": "15:19",
+    "minutes": 18,
+    "retailer_count": 6,
+    "start_local": "2026-10-12 15:01",
+    "start_time": "15:01",
+    "total_amount": 3000.0,
+    "transaction_count": 12
+   },
+   "provenance": {
+    "key": "seq:peak",
+    "rule": "max transactions in any rolling 60-minute window"
+   },
+   "created_at_utc": "2026-10-16T03:15:26Z"
+  }
+ ]
+}

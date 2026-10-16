@@ -1,0 +1,4 @@
+-r backend/requirements.txt
+# V2 only: PostgreSQL / Supabase driver and Parquet export
+psycopg[binary]>=3.2,<4
+pyarrow>=16

@@ -1,0 +1,14 @@
+{
+  "product_name": "INQUEST",
+  "alt_name": "Casefile",
+  "tagline": "Evidence-grounded investigation platform",
+  "long_description": "An evidence-grounded AI investigation copilot that turns suspicious transaction alerts into structured, verifiable investigation reports and helps human investigators evaluate the underlying evidence.",
+  "logo_text": "INQUEST",
+  "logo_mark": "prism",
+  "organization_label": "ThunderHacks II · OLG Sponsor Challenge",
+  "display_timezone": "America/Toronto",
+  "currency": "CAD",
+  "locale": "en-CA",
+  "disclaimer": "Synthetic data only. Not affiliated with or connected to OLG, and does not reproduce OLG's DART system.",
+  "report_disclaimer": "This report identifies potentially suspicious patterns and does not establish that fraudulent activity occurred. Final determination requires human review."
+}
