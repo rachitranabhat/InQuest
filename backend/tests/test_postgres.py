@@ -98,3 +98,46 @@ def test_sqlite_to_postgres_copy_is_identical_and_repeatable(tmp_path):
         assert out["all_identical"] and out["target_ok"]
         added = int(r.stdout.split("rows_added_total=")[1].split()[0])
         assert added > 0 if run == 1 else added == 0               # second run duplicates nothing
+
+
+# ---------------------------------------------------------------- TLS detection (no database needed)
+def test_tls_check_uses_client_side_libpq_status_not_pg_stat_ssl(monkeypatch, capsys):
+    """Behind Supabase's pooler pg_stat_ssl reports the pooler's internal link (ssl = false) even though the
+    client connection is TLS. The check must use libpq's status, keep sslmode=require, and still refuse plaintext."""
+    import config
+    from database import check_connection, pg
+
+    url = "postgresql://u:secret@aws-0-us-east-1.pooler.supabase.com:5432/postgres?sslmode=require"
+    assert "sslmode=require" in pg.safe_dsn(url)
+    assert "sslmode=require" in pg.safe_dsn(url.split("?")[0])                    # added when missing
+    with pytest.raises(ValueError):
+        pg.safe_dsn(url.replace("require", "disable"))
+
+    class PQ:
+        def __init__(self, on): self.ssl_in_use = on
+        def ssl_attribute(self, name): return b"TLSv1.3" if name == b"protocol" else None
+
+    class Raw:
+        def __init__(self, on): self.pgconn = PQ(on)
+        def close(self): pass
+
+    class Cur:
+        def __init__(self, row): self.row = row
+        def fetchone(self): return self.row
+
+    class Fake(pg.Connection):
+        def __init__(self, on):
+            self._raw = Raw(on)
+        def execute(self, sql, params=()):
+            if "server_version" in sql: return Cur(("17.11",))
+            if "pg_stat_ssl" in sql: return Cur((False, None))                     # what the pooler reports
+            return Cur(None)
+        def close(self): pass
+
+    monkeypatch.setattr(config, "DB_BACKEND", "postgres")
+    monkeypatch.setattr(config, "DATABASE_URL", url)
+    for on, code, text in ((True, 0, "TLS: yes (TLSv1.3)"), (False, 3, "Refusing to continue without TLS")):
+        monkeypatch.setattr(pg, "connect", lambda _u, on=on: Fake(on))
+        assert check_connection.main() == code
+        out = capsys.readouterr().out
+        assert text in out and "secret" not in out

@@ -29,12 +29,12 @@ def main() -> int:
         return 2
     try:
         version = con.execute("SHOW server_version").fetchone()[0]
-        ssl = con.execute("SELECT ssl, version FROM pg_stat_ssl WHERE pid = pg_backend_pid()").fetchone()
+        tls_on, proto = con.tls()      # client-side (libpq); pg_stat_ssl is wrong behind Supabase's pooler
         schema = con.execute("SELECT 1 FROM information_schema.schemata WHERE schema_name = ?", (pg.SCHEMA,)).fetchone()
-        print(f"Connected. PostgreSQL {version}; TLS: {'yes (' + str(ssl[1]) + ')' if ssl and ssl[0] else 'NO'}; "
+        print(f"Connected. PostgreSQL {version}; TLS: {'yes (' + str(proto) + ')' if tls_on else 'NO'}; "
               f"schema '{pg.SCHEMA}': {'present' if schema else 'not created yet'}")
         local = pg.urlsplit(config.DATABASE_URL).hostname in ("localhost", "127.0.0.1", "::1")
-        if not (ssl and ssl[0]) and not local:
+        if not tls_on and not local:
             print("Refusing to continue without TLS.")
             return 3
         return 0

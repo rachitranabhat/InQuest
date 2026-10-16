@@ -222,6 +222,19 @@ class Connection:
     def close(self):
         self._raw.close()
 
+    def tls(self) -> tuple[bool, str | None]:
+        """TLS on THIS client connection, from libpq (PQsslInUse / PQsslAttribute). Unlike pg_stat_ssl this is
+        correct behind a pooler such as Supabase Supavisor, where pg_stat_ssl describes the pooler's own
+        internal link to the database rather than ours."""
+        pq = self._raw.pgconn
+        if not pq.ssl_in_use:
+            return False, None
+        try:
+            proto = pq.ssl_attribute(b"protocol")
+        except Exception:  # noqa: BLE001 - attribute lookup only; TLS itself is already confirmed
+            proto = None
+        return True, (proto.decode() if isinstance(proto, bytes) else proto) or "TLS"
+
 
 def connect(url: str) -> Connection:
     if psycopg is None:
